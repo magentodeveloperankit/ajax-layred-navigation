@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <catalog_category_layered>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/training_layred/style.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/training_layred/handler.js</name>
+            </action>
+        </reference>
+        <reference name="product_list_toolbar">
+            <block type="training_layred/catalog_product_list_pager" name="product_list_toolbar_pager"/>
+        </reference>
+        <reference name="product_list">
+            <action method="setTemplate">
+                <template>training_layred/catalog/product/list.phtml</template>
+            </action>
+        </reference>
+        <reference name="catalog.leftnav">
+            <action method="setTemplate">
+                <template>training_layred/catalog/layer/view.phtml</template>
+            </action>
+        </reference>
+    </catalog_category_layered>
+    <catalogsearch_result_index>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/training_layred/style.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/training_layred/handler.js</name>
+            </action>
+        </reference>
+        <reference name="search_result_list">
+            <action method="setTemplate">
+                <template>training_layred/catalog/product/list.phtml</template>
+            </action>
+        </reference>
+
+        <reference name="catalogsearch.leftnav">
+            <action method="setTemplate">
+                <template>training_layred/catalog/layer/view.phtml</template>
+            </action>
+        </reference>
+        <reference name="product_list_toolbar">
+            <block type="training_layred/catalog_product_list_pager" name="product_list_toolbar_pager"/>
+        </reference>
+    </catalogsearch_result_index>
+</layout>

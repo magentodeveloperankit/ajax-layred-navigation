@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <training translate="label comment" module="training_layred">
+            <label>Training</label>
+            <sort_order>300</sort_order>
+        </training>
+    </tabs>
+    <sections>
+        <training_layred translate="label comment" module="training_layred">
+            <label>Training LAYRED</label>
+            <tab>training</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <catalog translate="label comment">
+                    <label>Catalog Layered Navigation</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label comment">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <backend_model>training_layred/system_config_backend_layred_catalog</backend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <ajax_enabled translate="label comment">
+                            <label>Enable AJAX</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <backend_model>training_layred/system_config_backend_layred_catalog</backend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </ajax_enabled>
+                        <multiple_choice_filters translate="label comment">
+                            <label>Enable Multiple Choice Filter</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <backend_model>training_layred/system_config_backend_layred_catalog</backend_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </multiple_choice_filters>
+                        <routing_suffix translate="label comment">
+                            <label>Routing Suffix</label>
+                            <frontend_type>text</frontend_type>
+                            <comment>Used in url generation (it should be alphanumeric) - Do not use slash ( / )</comment>
+                            <backend_model>training_layred/system_config_backend_layred_catalog</backend_model>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </routing_suffix>
+                        <attribute_radio translate="label">
+                            <label>Attribute Radio</label>
+                            <frontend_type>text</frontend_type>
+                            <comment>Comma seperated attribute value(,) this will display as radio button in layred Navigation</comment>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </attribute_radio>
+                        <attribute_checkbox translate="label">
+                            <label>Attribute Checkbox</label>
+                            <frontend_type>text</frontend_type>
+                            <comment>Comma seperated attribute value(,) this will display as checkbox in layred Navigation</comment>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </attribute_checkbox>
+                    </fields>
+                </catalog>
+            </groups>
+        </training_layred>
+    </sections>
+</config>

@@ -1,0 +1,61 @@
+<?php
+$radioAttribute = $this->helper('training_layred')->isAttributeRadio();
+$expRadioAtt = explode(',',$radioAttribute);
+$checkboxAttribute = $this->helper('training_layred')->isAttributeCheckbox();
+$expCheckboxAtt = explode(',',$checkboxAttribute);
+?>
+<ol>
+
+    <?php foreach ($this->getItems() as $_key=>$_item): ?>
+
+        <?php  $attributeType = $_item->getFilter()->getRequestVar();  ?>
+        <li>
+            <?php if ($_item->getCount() > 0): ?>
+                <?php $id = $_item->getFilter()->getRequestVar() . '-' . $_item->getValue(); ?>
+                <?php if (in_array($attributeType, $expCheckboxAtt)) { ?>
+                    <div class="layered-nav-filter">
+                        <input type="checkbox"<?php if ($_item->isSelected()): ?> checked="checked" <?php endif; ?>
+                               value="<?php echo $this->urlEscape(($_item->isSelected()) ? $_item->getRemoveUrl() : $_item->getUrl()) ?>"
+                               id="<?php echo $id; ?>" />
+
+                        <label for="<?php echo $id; ?>" class="layered-nav-filter-label">
+                            <?php echo $_item->getLabel() ?>
+                            <?php if ($this->shouldDisplayProductCount()): ?>
+                                <span class="count">(<?php echo $_item->getCount() ?>)</span>
+                            <?php endif; ?>
+                        </label>
+                    </div>
+                <?php } else if (in_array($attributeType, $expRadioAtt)) {  ?>
+                    <div class="layered-nav-filter">
+                        <input type="radio" <?php if ($_item->isSelected()): ?> checked="checked" <?php endif; ?>
+                               value="<?php echo $this->urlEscape(($_item->isSelected()) ? $_item->getRemoveUrl() : $_item->getUrl()) ?>"
+                               id="<?php echo $id; ?>" />
+
+                        <label for="<?php echo $id; ?>" class="layered-nav-filter-label">
+                            <?php echo $_item->getLabel() ?>
+                            <?php if ($this->shouldDisplayProductCount()): ?>
+                                <span class="count">(<?php echo $_item->getCount() ?>)</span>
+                            <?php endif; ?>
+                        </label>
+                    </div>
+                <?php }else { ?>
+                    <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>">
+                        <?php echo $_item->getLabel() ?>
+                        <?php if ($this->shouldDisplayProductCount()): ?>
+                            <span class="count">(<?php echo $_item->getCount() ?>)</span>
+                        <?php endif; ?>
+                    </a>
+                <?php } ?>
+
+
+            <?php else: ?>
+                <span>
+                    <?php echo $_item->getLabel(); ?>
+                    <?php if ($this->shouldDisplayProductCount()): ?>
+                        <span class="count">(<?php echo $_item->getCount() ?>)</span>
+                    <?php endif; ?>
+                </span>
+            <?php endif; ?>
+        </li>
+    <?php endforeach ?>
+</ol>
