@@ -29,7 +29,7 @@
  *
  * @category   Training
  * @package    Training_Layred
- * @author     Training Core Team <ankit.jaiswal@perficient.com>
+ * @author     Training Core Team <ankits.jaiswal23@gmail.com>
  */
 class Training_Layred_Controller_Router extends Mage_Core_Controller_Varien_Router_Standard
 {

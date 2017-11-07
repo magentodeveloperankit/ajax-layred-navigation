@@ -29,7 +29,7 @@
  *
  * @category   Training
  * @package    Training_Layred
- * @author     Training Core Team <ankit.jaiswal@perficient.com>
+ * @author     Training Core Team <ankits.jaiswal23@gmail.com>
  */
 class Training_Layred_Model_Catalog_Layer extends Mage_Catalog_Model_Layer
 {
